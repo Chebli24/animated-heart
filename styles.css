@@ -1,0 +1,52 @@
+body{
+    background: #3e0000;
+    margin: 0;
+    padding: 0;
+}
+
+.heart{
+    width: 180px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    background: #ff3e3e;
+    transition: 1s;
+    transform-origin: right bottom;
+}
+/*
+pseudo-classes (before, hover, etc...) are keywords added to selectors
+to specify a special state of that element
+*/
+.heart:before{
+    content: "";
+    /*
+    content property is used with :before and :after pseudo-classes to add content to an element
+    in this case we are adding an empty string
+    */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition: 2s;
+    transform-origin: right bottom;
+    /* transform-origin: say where the origin of the transformation of an element should be
+    in this case is ate the bottom right of the div element*/
+}
+
+.heart:hover{
+    transform: rotate(45deg);
+    /*
+    transform property lets you modify the coordinate space of the CSS visual formatting model
+    you can rotate, skew, scale, or translate an element
+    */
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.heart:hover:before{
+    background: #e22c2c;
+    transform:rotate(450deg) translateY(100px);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
